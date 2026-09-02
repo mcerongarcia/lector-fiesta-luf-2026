@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Preinscripción · Fiesta Multicultural LUF 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--blue:#064a9e;--sky:#0785d1;--ink:#14213b;--green:#087d43;--red:#a92e2e}*{box-sizing:border-box}body{margin:0;font:16px/1.45 Arial,sans-serif;background:linear-gradient(145deg,#edf7ff,#daf0f5);color:var(--ink)}.shell{max-width:650px;margin:auto;padding:25px 15px 42px}.brand{text-align:center}.brand img{display:block;margin:auto;width:106px;height:126px;object-fit:contain}.seal{width:86px;height:105px;margin:auto;border:6px solid #ef233c;border-radius:10px 10px 22px 22px;background:#fff;color:#064a9e;font-weight:900;font-size:29px;display:grid;place-items:center}.brand h1{margin:11px 0 3px;font-size:31px;line-height:1.12;color:var(--blue)}.brand p{margin:0 0 21px;color:#35628d;font-weight:bold}.card{background:#fff;border-radius:24px;padding:27px 25px;box-shadow:0 14px 35px #1d4d7420}.card h2{margin:0 0 18px;color:var(--blue);font-size:26px;border-bottom:4px solid #d9e8f4;padding-bottom:13px}.intro{color:#5e728c;margin:0 0 19px}.line{font-size:20px;font-weight:800;color:var(--blue);border-bottom:2px solid #d9e8f4;margin:24px 0 12px;padding-bottom:8px}label{display:block;font-weight:bold;margin:16px 0 7px}input,select{width:100%;padding:14px;border:2px solid #b8cfe3;border-radius:13px;font:17px Arial;color:var(--ink);background:#fff}small{display:block;color:#60738d;margin-top:5px}.course{display:none}.minor{border:2px solid #dae8f3;border-radius:15px;padding:14px;margin-top:12px;background:#f8fbfe}.minor h4{margin:0 0 9px;color:var(--blue)}button{width:100%;border:0;border-radius:14px;padding:17px 15px;font-weight:800;font-size:17px;cursor:pointer;background:linear-gradient(110deg,var(--blue),var(--sky));color:#fff;margin-top:18px}.secondary{background:#fff;color:var(--blue);border:2px solid var(--blue);margin-top:12px}.notice{padding:15px;border-radius:14px;background:#f1f7fc;color:#385a77;font-size:14px}.declaration{margin-top:20px;padding:16px;border-radius:14px;background:#fff7e7;border:1px solid #f1d18a;font-size:14px}.check{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-weight:bold}.check input{width:21px;height:21px;flex:none;margin-top:2px}.alert{display:none;margin:15px 0;padding:14px;border-radius:13px;background:#ffeded;color:var(--red);font-weight:bold}.alert.show{display:block}.sending{display:none;text-align:center;padding:14px;color:var(--blue);font-weight:bold}.sending.show{display:block}.voucher{display:none;text-align:center}.voucher.show{display:block}.ok{width:70px;height:70px;border-radius:50%;background:#e0f6e9;color:var(--green);font-size:43px;display:grid;place-items:center;margin:0 auto 13px}.voucher h2{border:0;margin:0;padding:0}.name{font-size:22px;font-weight:900;margin:16px 0 5px}.group{margin:16px 0;background:#edf6fc;padding:14px;border-radius:13px;font-weight:bold;color:#174e83}.folio{display:inline-block;background:#edf4fa;padding:8px 11px;border-radius:9px;font-weight:bold;margin:10px 0}.qr{display:flex;justify-content:center;margin:16px 0}.instruction{border:2px dashed var(--green);padding:15px;border-radius:14px;color:#087d43;font-weight:900}.footer{text-align:center;color:#60738d;font-size:13px;margin:20px 0 0}@media(max-width:480px){.shell{padding:18px 12px 32px}.card{padding:23px 18px}.brand h1{font-size:28px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <section class="brand">
+    <img src="https://lh3.googleusercontent.com/d/1znQomKqmEJMbNzpjhCnwqe0JwAj1PNuy" onerror="this.style.display='none';document.getElementById('seal').style.display='grid'" alt="Liceo Luis Urbina Flores">
+    <div id="seal" class="seal" style="display:none">LUF</div>
+    <h1>Fiesta Multicultural LUF 2026</h1>
+    <p>Sábado 12 de septiembre de 2026</p>
+  </section>
+
+  <section id="formCard" class="card">
+    <h2>Preinscripción</h2>
+    <p class="intro">Completa tus datos antes de asistir. Al finalizar recibirás tu comprobante QR para mostrar en la puerta.</p>
+    <div id="alert" class="alert"></div>
+
+    <form id="registration" method="post" target="receiver" action="https://script.google.com/macros/s/AKfycbxEpGbvQfhTEqUTo-O9gcG3_oKJP51QRnNDMed-WlY9FLlWPI2TM8Wmdgk8tt85C6OV/exec">
+      <input id="payload" name="payload" type="hidden">
+      <input name="website" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+      <div class="line">Persona responsable</div>
+      <label for="attendeeType">Tipo de asistente</label>
+      <select id="attendeeType" required>
+        <option value="">Selecciona una opción</option>
+        <option value="ESTUDIANTE">Estudiante</option>
+        <option value="APODERADO/A">Apoderado/a</option>
+        <option value="INVITADO/A">Invitado/a</option>
+      </select>
+
+      <div id="courseBox" class="course">
+        <label for="course">Curso</label>
+        <select id="course">
+          <option value="">Selecciona el curso</option>
+          <option>1°A</option><option>1°B</option><option>1°C</option><option>1°D</option><option>1°E</option><option>1°F</option>
+          <option>2°A</option><option>2°B</option><option>2°C</option><option>2°D</option><option>2°E</option><option>2°F</option>
+          <option>3°A</option><option>3°B</option><option>3°C</option><option>3°D</option><option>3°E</option><option>3°F</option><option>3°G</option>
+          <option>4°A</option><option>4°B</option><option>4°C</option><option>4°D</option><option>4°E</option><option>4°F</option>
+        </select>
+      </div>
+
+      <label for="name">Nombre completo</label>
+      <input id="name" autocomplete="name" placeholder="Nombre y apellido" required>
+
+      <label for="documentType">Tipo de documento</label>
+      <select id="documentType" required>
+        <option value="RUT">RUT chileno</option>
+        <option value="PASAPORTE">Pasaporte</option>
+        <option value="DNI">DNI</option>
+        <option value="OTRO">Otro documento</option>
+      </select>
+
+      <label for="document">Número de documento</label>
+      <input id="document" autocomplete="off" placeholder="Ej.: 12.345.678-5" required>
+      <small id="documentHelp">Puedes escribir el RUT con o sin puntos y guion.</small>
+
+      <div class="line">Menores a cargo</div>
+      <p class="intro">Si asistes con hijos u otros menores bajo tu cuidado, agrégalos aquí. No necesitan completar otro formulario.</p>
+      <div id="minors"></div>
+      <button id="addMinor" type="button" class="secondary">+ AGREGAR MENOR A CARGO</button>
+
+      <div class="declaration">
+        <strong>Declaración de responsabilidad</strong><br>
+        Declaro que la información entregada es correcta. Asumo responsabilidad por mi conducta y por la de los menores que registro bajo mi cuidado. Me comprometo a respetar las normas de convivencia y toda conducta establecida en el Reglamento Interno del establecimiento. El Liceo Luis Urbina Flores no se responsabiliza por pérdidas, hurtos o robos ocurridos dentro del recinto.
+        <label class="check"><input id="accepted" type="checkbox" required><span>He leído y acepto esta declaración de responsabilidad.</span></label>
+      </div>
+
+      <button id="submitButton" type="submit">GENERAR MI COMPROBANTE QR</button>
+    </form>
+    <div id="sending" class="sending">Registrando tu asistencia…</div>
+  </section>
+
+  <section id="voucher" class="card voucher">
+    <div class="ok">✓</div>
+    <h2>¡REGISTRO ENVIADO!</h2>
+    <p>Conserva este comprobante para el ingreso.</p>
+    <div id="voucherName" class="name"></div>
+    <div id="voucherDocument"></div>
+    <div id="groupInfo" class="group"></div>
+    <div id="folio" class="folio"></div>
+    <div id="qrcode" class="qr"></div>
+    <div class="instruction">MUESTRA ESTE CÓDIGO QR EN LA PUERTA PARA INGRESAR</div>
+    <button id="newRegistration" class="secondary" type="button">REGISTRAR OTRA PERSONA O GRUPO</button>
+  </section>
+  <iframe id="receiver" name="receiver" style="display:none"></iframe>
+  <p class="footer">Liceo Luis Urbina Flores · Fiesta Multicultural LUF 2026</p>
+</main>
+
+<script>
+const ENDPOINT='https://script.google.com/macros/s/AKfycbxEpGbvQfhTEqUTo-O9gcG3_oKJP51QRnNDMed-WlY9FLlWPI2TM8Wmdgk8tt85C6OV/exec';
+const PUBLIC='https://mcerongarcia.github.io/lector-fiesta-luf-2026/preinscripcion.html';
+const $=id=>document.getElementById(id);
+let waiting=false,timeoutId=null;
+
+function clean(v){return String(v||'').trim().replace(/\s+/g,' ')}
+function rutFormat(v){const x=String(v||'').toUpperCase().replace(/[^0-9K]/g,'');if(x.length<2)return v;return x.slice(0,-1).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'-'+x.slice(-1)}
+function updateCourse(){const required=['ESTUDIANTE','APODERADO/A'].includes($('attendeeType').value);$('courseBox').style.display=required?'block':'none';$('course').required=required;if(!required)$('course').value=''}
+function updateDocumentHelp(){const rut=$('documentType').value==='RUT';$('documentHelp').textContent=rut?'Puedes escribir el RUT con o sin puntos y guion.':'Ingresa el número o identificador de tu documento.';$('document').placeholder=rut?'Ej.: 12.345.678-5':'Ej.: AB123456'}
+function addMinor(){const count=$('minors').children.length;if(count>=12){showError('Puedes registrar hasta 12 menores a cargo.');return}const box=document.createElement('div');box.className='minor';box.innerHTML='<h4>Menor a cargo '+(count+1)+'</h4><label>Nombre completo</label><input class="minorName" placeholder="Nombre y apellido" required><label>Documento (opcional)</label><input class="minorDocument" placeholder="RUT, DNI o pasaporte"><button type="button" class="secondary remove">ELIMINAR</button>';box.querySelector('.remove').onclick=()=>box.remove();$('minors').appendChild(box)}
+function showError(msg){$('alert').textContent=msg;$('alert').classList.add('show');window.scrollTo({top:$('alert').getBoundingClientRect().top+window.scrollY-18,behavior:'smooth'})}
+function hideError(){$('alert').classList.remove('show')}
+async function makeFolio(document){const key=String(document).toUpperCase().replace(/[^A-Z0-9]/g,'');const bytes=new TextEncoder().encode('LUF2026|'+key);const hash=await crypto.subtle.digest('SHA-256',bytes);const hex=Array.from(new Uint8Array(hash)).map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase();return 'LUF-'+hex.slice(0,12)}
+function showVoucher(data,folio){$('formCard').style.display='none';$('voucherName').textContent=data.name;$('voucherDocument').textContent=data.documentType+': '+data.document;$('groupInfo').textContent='INGRESO VALIDADO PARA '+(1+data.minors.length)+' PERSONA'+(data.minors.length?'S':'');$('folio').textContent='FOLIO: '+folio;$('qrcode').innerHTML='';new QRCode($('qrcode'),{text:PUBLIC+'?validar='+encodeURIComponent(folio),width:205,height:205,colorDark:'#064a9e',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});$('voucher').classList.add('show');window.scrollTo({top:0,behavior:'smooth'})}
+$('attendeeType').onchange=updateCourse;$('documentType').onchange=updateDocumentHelp;$('document').onblur=()=>{if($('documentType').value==='RUT')$('document').value=rutFormat($('document').value)};$('addMinor').onclick=addMinor;
+$('registration').onsubmit=async function(e){e.preventDefault();hideError();if(!this.reportValidity())return;const minors=[...document.querySelectorAll('.minor')].map(x=>({name:clean(x.querySelector('.minorName').value),document:clean(x.querySelector('.minorDocument').value),documentType:'RUT'}));if(minors.some(x=>x.name.split(' ').length<2)){showError('Completa nombre y apellido de cada menor a cargo.');return}const doc=$('documentType').value==='RUT'?rutFormat($('document').value):clean($('document').value).toUpperCase();const folio=await makeFolio(doc);const data={name:clean($('name').value),attendeeType:$('attendeeType').value,course:$('course').value,documentType:$('documentType').value,document:doc,minors,accepted:$('accepted').checked,website:'',clientFolio:folio};$('payload').value=JSON.stringify(data);this.action=ENDPOINT;waiting=true;$('submitButton').disabled=true;$('sending').classList.add('show');timeoutId=setTimeout(()=>{if(waiting){waiting=false;$('sending').classList.remove('show');$('submitButton').disabled=false;showError('La conexión demoró demasiado. Revisa tu internet e intenta nuevamente.')}},15000);this.submit();};
+$('receiver').onload=()=>{if(!waiting)return;waiting=false;clearTimeout(timeoutId);$('sending').classList.remove('show');const data=JSON.parse($('payload').value);showVoucher(data,data.clientFolio)};
+$('newRegistration').onclick=()=>{location.href=PUBLIC};
+updateCourse();updateDocumentHelp();
+</script>
+</body>
+</html>
